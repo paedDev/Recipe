@@ -50,7 +50,9 @@ const Details = () => {
             onClick={() => handleAddToFavorite(recipeDetailsData?.recipe)}
             className="p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 shadow-md bg-black text-white inline-block hover:bg-gray-600 duration-500"
           >
-            {favoritesList.findIndex(
+            {favoritesList &&
+            favoritesList.length > 0 &&
+            favoritesList.findIndex(
               (item) => item.id === recipeDetailsData?.recipe?.id
             ) !== -1
               ? "Remove from favorites"
